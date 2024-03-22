@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Files to be Uploaded</h1>
+{% if q1 %}
+{% for u in q1 %}
+<ul>
+
+    <li><a href="{{u.zip_file.url}}" >Zip file</a></li>
+      <li><a href="{{u.info_file.url}}">Excel file</a></li>
+   </ul>
+
+{% endfor %}
+{% endif %}
+<a href="adminhome">Back</a>
+</body>
+</html>

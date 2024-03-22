@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<h1>Application Form</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <pre>
+    First name:<input type="text" name="first_name"><br>
+    Last name :<input type="text" name="last_name"><br>
+    Age       :<input type="number" name="age"><br>
+    Phone     :<input type="number" name="phone"><br>
+    Email     :<input type="email" name="email"><br>
+    Username  :<input type="text" name="username"><br>
+    Password  :<input type="text" name="password"><br>
+    register :<input type="submit" value="submit"><br>
+        </pre>
+</form>
+</center>
+</body>
+</html>

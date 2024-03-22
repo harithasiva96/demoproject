@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Teachers Information</h1>
+{% if k1 %}
+{% for u in k1 %}
+<ul>
+    <li>first_name:{{u.first_name}}</li>
+    <li>last_name:{{u.last_name}}</li>
+    <li><img src="{{u.profile_pic.url}}" alt="img" height="60px" width="60px"></li>
+    <li>email:{{u.email}}</li>
+    <li>phone:{{u.phone}}</li>
+    <li>room_number:{{u.room_number}}</li>
+    <li>subjects:{{u.subject1}},{{u.subject2}},{{u.subject3}},{{u.subject4}},{{u.subject5}}</li>
+    <a href="update/{{u.id}}">update</a>
+     <a href="delete/{{u.id}}">delete</a>
+
+</ul>
+
+{% endfor %}
+{% elif p %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <pre>
+   first_name :<input type="text" name="first_name" value="{{p.first_name}}"><br>
+    last_name  :<input type="text" name="last_name" value="{{p.last_name}}"><br>
+    photo      :<input type="file" name="profile_pic" value="{{p.profile_pic.url}}"><br>
+    email      :<input type="email" name="email" value="{{p.email}}"><br>
+    phone      :<input type="number" name="phone" value="{{p.phone}}"><br>
+    room_number:<input type="number" name="room_number" value="{{p.room_number}}"><br>
+    subjects   :<input type="text" name="subject1" value="{{p.subject1}}"><br>
+               :<input type="text" name="subject2" value="{{p.subject2}}"><br>
+               :<input type="text" name="subject3" value="{{p.subject3}}"><br>
+               :<input type="text" name="subject4" value="{{p.subject4}}"><br>
+               :<input type="text" name="subject5" value="{{p.subject5}}"><br>
+               :<input type="submit" value="submit" >
+
+    </pre>
+</form>
+{% endif %}
+
+<a href="adminhome">back</a>
+</body>
+</html>
